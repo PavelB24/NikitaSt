@@ -1,6 +1,6 @@
 package org.example;
 
-public class Cat {
+public class Cat extends Animal implements EatAble {
 
     static int counter = 0;
 
@@ -14,7 +14,21 @@ public class Cat {
         counter++;
     }
 
-    public void printInfo(){
+    public void foo(){}
+
+    @Override
+    public void printInfo() {
         System.out.println(name + " " + age);
+    }
+
+    @Override
+    public void sleep() {
+        super.sleep();
+        System.out.println(name + " " + "Проспала 7 часов");
+    }
+
+    @Override
+    public void eat(String food) {
+        System.out.println(name + " " + "eat" + " " + food);
     }
 }
